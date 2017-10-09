@@ -1,17 +1,15 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="dark">
+    <ion-title>Comidas</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class="content-frame" padding>
+    <ion-item class="content-frame" *ngFor="let food of foods"  (click)="itemTapped($event,food)">
+        <ion-avatar item-start>
+          <img [src]="food.Imagen == '' ? 'http://www.lescouverts.com.mx/wp-content/uploads/2016/10/renta-de-cubiertos-800x600.jpg' : 'food.Imagen'">
+        </ion-avatar> 
+        <h2>{{ food.Nombre | uppercase }}</h2>
+          <p> $ {{ food.Precio }}</p>
+    </ion-item>
 </ion-content>

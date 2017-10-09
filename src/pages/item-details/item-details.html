@@ -1,0 +1,25 @@
+<!--
+  Generated template for the ItemDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Detalles</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content-frame" padding>
+	<div class="list card content-frame" *ngIf="selectedItem">		
+		<ion-avatar item-start>
+		    <img [src]="selectedItem.Imagen == '' ? 'http://www.parkinsonalabama.com/wp-content/uploads/2016/09/coffee.jpg' : 'user.Imagen'">
+	    </ion-avatar>	      
+	    <h2>{{ selectedItem.Nombre | uppercase }}</h2>
+	    <p>{{selectedItem.Descripcion}}</p>
+	    <p> $ {{ selectedItem.Precio }}</p>
+	</div>
+</ion-content>

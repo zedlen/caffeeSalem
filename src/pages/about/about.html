@@ -1,11 +1,17 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title>
-      About
+      Bebidas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content class="content-frame" padding>
+	<ion-item class="content-frame" *ngFor="let drink of drinks"  (click)="itemTapped($event,drink)">
+        <ion-avatar item-start>
+          <img [src]="drink.Imagen == '' ? 'http://www.parkinsonalabama.com/wp-content/uploads/2016/09/coffee.jpg' : 'drink.Imagen'">
+        </ion-avatar> 
+        <h2>{{ drink.Nombre | uppercase }}</h2>
+          <p>$ {{ drink.Precio }}</p>
+    </ion-item>
 </ion-content>
